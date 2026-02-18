@@ -1,0 +1,34 @@
+.explore {
+  padding: 60px;
+  text-align: center;
+}
+
+.explore h2 {
+  font-size: 40px;
+  color: #2c2821;
+  margin-bottom: 10px;
+}
+
+.explore p {
+  color: gray;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

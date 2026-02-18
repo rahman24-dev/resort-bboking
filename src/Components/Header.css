@@ -1,0 +1,170 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(14px);
+  background: rgba(1, 17, 43, 0.95);
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  background: rgba(1, 17, 43, 0.95);
+  backdrop-filter: blur(20px);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 34px;
+}
+
+.logo-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ee9a2e;
+  letter-spacing: 0.5px;
+}
+
+.logo-tagline {
+  font-size: 14px;
+  font-weight: 400;
+  color:rgb(176, 174, 175);
+  opacity: 0.9;
+}
+
+/* =========================
+   NAV LINKS (DESKTOP)
+========================= */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #d9f4ff;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-icon {
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  background: rgb(95, 94, 95);
+  color: #ffffff;
+}
+
+/* ADMIN LINK SPECIAL */
+.admin-link {
+  background: linear-gradient(135deg,  #db8349 30%, #ee9a2e 70%);
+  color: white;
+  border: none;
+}
+
+/* =========================
+   HAMBURGER BUTTON
+========================= */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* HAMBURGER ANIMATION (PERFECT X) */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 12px 16px;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1100;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    background: rgba(1, 17, 43, 0.95);
+    backdrop-filter: blur(18px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 90px 20px;
+    gap: 18px;
+    transition: right 0.4s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+}

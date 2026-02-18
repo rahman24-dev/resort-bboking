@@ -1,0 +1,139 @@
+.heros {
+  height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("https://ik.imagekit.io/tae7lprpz/headerImage.jpeg")
+      center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Glass Card */
+.heros-content {
+  max-width: 700px;
+  padding: 60px 50px;
+  text-align: center;
+  color: #eaf6ff;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0);
+}
+
+/* Heading */
+.heros-content h2 {
+  font-size: 52px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* Subtitle */
+.heros-content p {
+  font-size: 22px;
+  line-height: 1.7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: #cfeeff;
+  margin-bottom: 35px;
+}
+
+.heros-content h2 span {
+  font-size: 52px;
+  background: linear-gradient(135deg, #b86c3b, #e6a552);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* CTA BUTTON */
+.heros-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(#db8349 , #ee9a2e);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.heros-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.heros-button:hover::before {
+  left: 100%;
+}
+
+.heros-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.heros-button:active {
+  transform: translateY(-2px);
+}
+
+.heros-button svg {
+  width: 20px;
+  height: 20px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .heros {
+    height: 75vh;
+    padding: 60px 24px;
+  }
+
+  .heros-content {
+    max-width: 600px;
+    padding: 48px 36px;
+  }
+
+  .heros-content h2 {
+    font-size: 38px;
+  }
+
+  .heros-content h2 span {
+    font-size: 38px;
+  }
+
+  .heros-content p {
+    font-size: 18px;
+  }
+
+  .heros-button {
+    padding: 14px 34px;
+    font-size: 16px;
+  }
+}

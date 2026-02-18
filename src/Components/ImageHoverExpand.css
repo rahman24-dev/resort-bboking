@@ -1,0 +1,145 @@
+
+.Title-image{
+  color: #2c2821;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+.Details-views{
+  color: grey;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 8px;
+}
+
+
+/* Wrapper to isolate the component */
+.img-hover-expand-wrapper {
+  background-color: #f0ebe9;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.img-hover-expand-container {
+  display: flex;
+  width: 820px;
+  max-width: 100%;
+  height: 340px;
+  gap: 10px;
+}
+
+.img-hover-expand-card {
+  flex: 1;
+  min-width: 70px;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: flex 0.5s ease;
+  cursor: pointer;
+}
+
+.img-hover-expand-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* All cards shrink on hover */
+.img-hover-expand-container:hover .img-hover-expand-card {
+  flex: 0.8;
+}
+
+/* Only hovered card grows more */
+.img-hover-expand-container .img-hover-expand-card:hover {
+  flex: 5;
+}
+
+/* TABLET RESPONSIVE (769px - 1024px) */
+@media (max-width: 1024px) {
+  .img-hover-expand-container {
+    width: 90%;
+    max-width: 700px;
+    height: 300px;
+  }
+  
+  .img-hover-expand-card {
+    min-width: 60px;
+  }
+}
+
+/* MOBILE LANDSCAPE (481px - 768px) */
+@media (max-width: 768px) {
+  .img-hover-expand-wrapper {
+    min-height: 300px;
+    padding: 15px;
+  }
+
+  .img-hover-expand-container {
+    width: 95%;
+    height: 250px;
+    gap: 8px;
+  }
+  
+  .img-hover-expand-card {
+    min-width: 50px;
+    border-radius: 15px;
+  }
+  
+  /* Adjust hover effect for touch devices */
+  .img-hover-expand-container .img-hover-expand-card:hover {
+    flex: 4;
+  }
+}
+
+/* MOBILE PORTRAIT (up to 480px) */
+@media (max-width: 480px) {
+  .img-hover-expand-wrapper {
+    min-height: 600px;
+    padding: 10px;
+  }
+  
+  .img-hover-expand-container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    min-height: 500px;
+    gap: 10px;
+  }
+  
+  .img-hover-expand-card {
+    flex: 1;
+    min-width: auto;
+    min-height: 80px;
+    border-radius: 15px;
+  }
+  
+  /* Vertical expansion on mobile */
+  .img-hover-expand-container:hover .img-hover-expand-card {
+    flex: 0.8;
+  }
+  
+  .img-hover-expand-container .img-hover-expand-card:hover {
+    flex: 3;
+  }
+}
+
+/* EXTRA SMALL DEVICES (up to 360px) */
+@media (max-width: 360px) {
+  .img-hover-expand-container {
+    max-width: 280px;
+    min-height: 450px;
+  }
+  
+  .img-hover-expand-card {
+    min-height: 70px;
+    border-radius: 12px;
+  }
+}
