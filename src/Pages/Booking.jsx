@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import API from "../api";
 import "./Booking.css";
 
 function Booking() {
@@ -44,9 +44,8 @@ function Booking() {
       price: basePrice,
     };
 
-    const response = await axios.post(
-      "http://localhost:5000/api/bookings",
-      bookingData
+    const response = await API.post(
+      "/api/booking",bookingData
     );
 
     alert("Booking Saved Successfully!");

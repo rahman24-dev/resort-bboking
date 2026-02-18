@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../api";
 import { useNavigate } from "react-router-dom";
 import './AdminDashboard.css';
 
@@ -24,8 +24,8 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("adminToken");
 
-      const res = await axios.get(
-        "http://localhost:5000/api/admin/bookings",
+      const res = await API.get(
+        "/api/admin/bookings",
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -53,8 +53,8 @@ function AdminDashboard() {
     try {
       const token = localStorage.getItem("adminToken");
 
-      await axios.delete(
-        `http://localhost:5000/api/admin/bookings/${bookingId}`,
+      await API.delete(
+        `/api/admin/bookings/${bookingId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`
