@@ -5,7 +5,7 @@ import Booking from './Pages/Booking'
 import AdminLogin from "./Pages/AdminLogin"
 import AdminDashboard from "./Pages/AdminDashboard"
 import ProtectedRoute from "./Components/ProtectedRoute";
-import StayDetails from "./pages/StayDetails";
+import StayDetails from "./Pages/StayDetails";
 
 
 function App() {
