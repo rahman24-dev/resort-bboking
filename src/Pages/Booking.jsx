@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
 import API from "../api";
 import "./Booking.css";
 
@@ -32,6 +30,7 @@ function Booking() {
   };
 
   const handleSubmit = async (e) => {
+    console.log("Submit clicked");
   e.preventDefault();
 
   try {

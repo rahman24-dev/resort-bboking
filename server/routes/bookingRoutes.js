@@ -11,47 +11,51 @@ router.post("/", async (req, res) => {
     const booking = new Booking(req.body);
     await booking.save();
 
-    // Send confirmation email to customer
-    await sendEmail(
-      req.body.email,
-      "Nature Heaven Booking Confirmation 🌿",
-      `Hello ${req.body.name},
+    try {
+      // Customer email
+      await sendEmail(
+        req.body.email,
+        "Nature Heaven Booking Confirmation 🌿",
+        `Hello ${req.body.name},
 
-      Your booking is confirmed!
+          Your booking is confirmed!
 
-      Stay Type: ${req.body.stayType}
-      Check-in: ${req.body.checkIn}
-      Check-out: ${req.body.checkOut}
-      Adults: ${req.body.adults}
-    Children: ${req.body.children}
+          Stay Type: ${req.body.stayType}
+          Check-in: ${req.body.checkIn}
+          Check-out: ${req.body.checkOut}
+          Adults: ${req.body.adults}
+          Children: ${req.body.children}
 
-    Thank you for choosing Nature Heaven 🌿`
-    );
+          Thank you for choosing Nature Heaven 🌿`
+      );
 
-    // Send email to admin
+      // Admin email
       await sendEmail(
         process.env.ADMIN_EMAIL,
         "New Booking Alert 🚨",
         `New booking received!
 
-      Name: ${req.body.name}
-      Phone: ${req.body.phone}
-      Email: ${req.body.email}
-      Stay Type: ${req.body.stayType}
-      Check-in: ${req.body.checkIn}
-      Check-out: ${req.body.checkOut}
-      Adults: ${req.body.adults}
-      Children: ${req.body.children}`
+          Name: ${req.body.name}
+          Phone: ${req.body.phone}
+          Email: ${req.body.email}
+          Stay Type: ${req.body.stayType}
+          Check-in: ${req.body.checkIn}
+          Check-out: ${req.body.checkOut}
+          Adults: ${req.body.adults}
+          Children: ${req.body.children}`
       );
 
+    } catch (emailError) {
+      console.log("Email failed:", emailError.message);
+    }
 
-    res.status(201).json({ message: "Booking saved & email sent" });
+    res.status(201).json({ message: "Booking saved successfully" });
 
   } catch (error) {
+    console.log("Booking error:", error.message);
     res.status(500).json({ error: error.message });
   }
 });
-
 
 // Get all bookings (Admin use later)
 router.get("/", verifyAdmin, async (req, res) => {
