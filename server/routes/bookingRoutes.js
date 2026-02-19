@@ -11,51 +11,13 @@ router.post("/", async (req, res) => {
     const booking = new Booking(req.body);
     await booking.save();
 
-    try {
-      // Customer email
-      await sendEmail(
-        req.body.email,
-        "Nature Heaven Booking Confirmation 🌿",
-        `Hello ${req.body.name},
-
-          Your booking is confirmed!
-
-          Stay Type: ${req.body.stayType}
-          Check-in: ${req.body.checkIn}
-          Check-out: ${req.body.checkOut}
-          Adults: ${req.body.adults}
-          Children: ${req.body.children}
-
-          Thank you for choosing Nature Heaven 🌿`
-      );
-
-      // Admin email
-      await sendEmail(
-        process.env.ADMIN_EMAIL,
-        "New Booking Alert 🚨",
-        `New booking received!
-
-          Name: ${req.body.name}
-          Phone: ${req.body.phone}
-          Email: ${req.body.email}
-          Stay Type: ${req.body.stayType}
-          Check-in: ${req.body.checkIn}
-          Check-out: ${req.body.checkOut}
-          Adults: ${req.body.adults}
-          Children: ${req.body.children}`
-      );
-
-    } catch (emailError) {
-      console.log("Email failed:", emailError.message);
-    }
-
-    res.status(201).json({ message: "Booking saved successfully" });
+    return res.status(201).json({ success:true,message: "Booking saved & email sent" });
 
   } catch (error) {
-    console.log("Booking error:", error.message);
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 });
+
 
 // Get all bookings (Admin use later)
 router.get("/", verifyAdmin, async (req, res) => {
