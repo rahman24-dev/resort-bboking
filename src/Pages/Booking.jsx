@@ -30,7 +30,6 @@ function Booking() {
   };
 
   const handleSubmit = async (e) => {
-    console.log("Submit clicked");
   e.preventDefault();
 
   try {

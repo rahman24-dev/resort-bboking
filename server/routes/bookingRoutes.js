@@ -10,6 +10,31 @@ router.post("/", async (req, res) => {
   try {
     const booking = new Booking(req.body);
     await booking.save();
+    sendEmail(
+      req.body.email,
+      "Nature Heaven Booking Confirmation 🌿",
+      `Hello ${req.body.name},
+
+      Your booking is confirmed!
+
+      Stay Type: ${req.body.stayType}
+      Check-in: ${req.body.checkIn}
+      Check-out: ${req.body.checkOut}
+      Adults: ${req.body.adults}
+      Children: ${req.body.children}
+
+      Thank you for choosing Nature Heaven 🌿`
+    );
+
+     sendEmail(
+      process.env.ADMIN_EMAIL,
+      "New Booking Alert 🚨",
+      `New booking received!
+
+      Name: ${req.body.name}
+      Phone: ${req.body.phone}
+      Email: ${req.body.email}`
+    );
 
     return res.status(201).json({ success:true,message: "Booking saved & email sent" });
 
