@@ -45,7 +45,7 @@ function Booking() {
     };
 
     const response = await API.post(
-      "/api/booking",bookingData
+      "/api/bookings",bookingData
     );
 
     alert("Booking Saved Successfully!");
@@ -62,8 +62,6 @@ function Booking() {
   const totalAmount = basePrice * totalGuest
 
   return (
-    <>
-    <Header/>
     <div className="booking-container">
       <h2>Book Your Stay</h2>
       <a href="/">Home</a>
@@ -175,8 +173,7 @@ function Booking() {
         </div>
       </form>
     </div>
-    <Footer/>
-    </>
+    
   );
 }
 

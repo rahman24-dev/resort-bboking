@@ -1,504 +1,621 @@
-/* ===================================
-   UPGRADED BOOKING FORM - GREEN GLASSMORPHIC
-   Professional & Elegant Design
-   =================================== */
+/*PREMIUM GLASSMORPHIC BOOKING FORM*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
 
 :root {
-  /* Green Color Palette */
-  --primary-green: #2d5f3f;
-  --secondary-green: #3a7d54;
-  --accent-green: #4a9d6f;
-  --light-green: #e8f5e9;
-  --sage-green: #a8c5a0;
-  --forest-green: #1b3e2f;
-  
-  /* Neutral Tones */
-  --white: #ffffff;
-  --off-white: #fafbfa;
-  --light-gray: #f1f4f3;
-  --medium-gray: #8a9a94;
-  --dark-gray: #2c3832;
-  
-  /* Glass Effect */
-  --glass-bg: rgba(255, 255, 255, 0.25);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --glass-shadow: rgba(45, 95, 63, 0.1);
+  /* Deep Forest Palette */
+  --primary:       #1c4a32;
+  --primary-mid:   #2d6b4a;
+  --accent:        #4fb87a;
+  --accent-glow:   rgba(79, 184, 122, 0.35);
+  --gold:          #c8a96e;
+  --gold-light:    rgba(200, 169, 110, 0.15);
+
+  /* Glass Layers */
+  --glass-base:    rgba(255, 255, 255, 0.07);
+  --glass-mid:     rgba(255, 255, 255, 0.13);
+  --glass-high:    rgba(255, 255, 255, 0.22);
+  --glass-border:  rgba(255, 255, 255, 0.18);
+  --glass-shine:   rgba(255, 255, 255, 0.45);
+
+  /* Surface & Text */
+  --surface:       #0d2118;
+  --surface-2:     #122a1f;
+  --text-primary:  #eef5f1;
+  --text-muted:    rgba(238, 245, 241, 0.5);
+  --text-label:    rgba(200, 169, 110, 0.9);
+
+  /* Spacing & Shape */
+  --radius-xl:     28px;
+  --radius-lg:     18px;
+  --radius-md:     12px;
+  --radius-sm:     8px;
+
+  /* Shadows */
+  --shadow-ambient: 0 40px 120px rgba(0, 0, 0, 0.6);
+  --shadow-card:    0 8px 32px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-glow:    0 0 40px rgba(79, 184, 122, 0.12);
+  --shadow-input:   0 2px 12px rgba(0, 0, 0, 0.3);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/*OUTER CONTAINER — Immersive Stage*/
 
 .booking-container {
-  max-width: 1200px;
-  margin: 6rem auto;
-  padding: 2.5rem;
-  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 50%, #ffffff 100%);
-  border-radius: 30px;
+  font-family: 'DM Sans', sans-serif;
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 3rem;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% -10%, rgba(79, 184, 122, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at -10% 80%, rgba(28, 74, 50, 0.35) 0%, transparent 55%),
+    linear-gradient(160deg, #0d2118 0%, #122a1f 50%, #0a1a10 100%);
+  border-radius: var(--radius-xl);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-ambient), var(--shadow-glow);
+  border: 1px solid rgba(79, 184, 122, 0.12);
+  isolation: isolate;
 }
 
-/* Decorative Background Elements */
+/* Noise texture overlay */
 .booking-container::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(74, 157, 111, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-size: 200px;
+  border-radius: inherit;
   pointer-events: none;
+  z-index: 0;
 }
 
+/* Decorative top shimmer line */
 .booking-container::after {
   content: '';
   position: absolute;
-  bottom: -30%;
-  left: -15%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(45, 95, 63, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(79, 184, 122, 0.6) 30%,
+    rgba(200, 169, 110, 0.8) 50%,
+    rgba(79, 184, 122, 0.6) 70%,
+    transparent 100%);
+  z-index: 1;
 }
 
+/*HEADER*/
+
 .booking-container h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 3rem;
+  letter-spacing: 0.04em;
   text-align: center;
-  font-size: 2.75rem;
-  background: linear-gradient(135deg, var(--forest-green) 0%, var(--accent-green) 100%);
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+  line-height: 1.15;
+}
+
+.booking-container h2 span,
+.booking-container h2 em {
+  font-style: italic;
+  background: linear-gradient(120deg, var(--gold) 0%, #e8d5a3 50%, var(--gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  position: relative;
-  z-index: 1;
 }
 
-.booking-container a {
-  color: var(--accent-green);
+.booking-container > a {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2.5rem;
+  color: var(--text-muted);
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  transition: color 0.3s var(--ease-out);
 }
 
-.booking-container a:hover {
-  color: var(--primary-green);
-  transform: translateY(-2px);
+.booking-container > a::before {
+  content: '↗';
+  font-size: 0.75rem;
+  transition: transform 0.3s var(--ease-out);
 }
+
+.booking-container > a:hover {
+  color: var(--accent);
+  transform: none;
+}
+
+.booking-container > a:hover::before {
+  transform: translate(2px, -2px);
+}
+
+/*BOOKING WRAPPER — Glass Grid*/
 
 .booking-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 2.5rem;
-  border-radius: 24px;
-  border: 1px solid var(--glass-border);
-  box-shadow: 
-    0 20px 60px rgba(45, 95, 63, 0.08),
-    0 8px 16px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* ===================================
-   FORM SECTION
-   =================================== */
+/*FORM SECTION*/
 
 .form-section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  background: var(--glass-base);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-card),
+    inset 0 1px 0 var(--glass-shine),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner top shimmer */
+.form-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, var(--glass-high) 0%, transparent 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  pointer-events: none;
 }
 
 .form-section label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--primary-green);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+/* Field wrapper for grouping label + input */
+.field-group {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-section input,
 .form-section select {
   width: 100%;
-  padding: 1rem 1.25rem;
-  font-size: 1rem;
-  color: var(--dark-gray);
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(74, 157, 111, 0.2);
-  border-radius: 12px;
+  padding: 0.95rem 1.15rem;
+  font-size: 0.95rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
   outline: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: inherit;
-  box-shadow: 0 2px 8px rgba(45, 95, 63, 0.04);
+  transition:
+    border-color 0.25s var(--ease-out),
+    background 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out),
+    transform 0.2s var(--ease-out);
+  box-shadow: var(--shadow-input), inset 0 1px 0 rgba(255,255,255,0.05);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-section input::placeholder {
+  color: rgba(238, 245, 241, 0.25);
+  font-weight: 300;
 }
 
 .form-section input:hover,
 .form-section select:hover {
-  border-color: rgba(74, 157, 111, 0.4);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(79, 184, 122, 0.3);
 }
 
 .form-section input:focus,
 .form-section select:focus {
-  border-color: var(--accent-green);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 
-    0 0 0 4px rgba(74, 157, 111, 0.1),
-    0 4px 12px rgba(45, 95, 63, 0.08);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 3px rgba(79, 184, 122, 0.15),
+    var(--shadow-input),
+    inset 0 1px 0 rgba(255,255,255,0.08);
   transform: translateY(-1px);
 }
 
-.form-section input::placeholder {
-  color: var(--medium-gray);
-  opacity: 0.7;
-}
-
-.form-section input[type="date"] {
-  cursor: pointer;
-  position: relative;
-}
-
+/* Date input calendar icon */
 .form-section input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) opacity(0.3);
   cursor: pointer;
-  filter: opacity(0.5);
-  transition: filter 0.3s ease;
+  transition: opacity 0.2s;
 }
 
 .form-section input[type="date"]:hover::-webkit-calendar-picker-indicator {
-  filter: opacity(1);
+  filter: invert(1) opacity(0.7);
 }
 
-.form-section input[type="number"] {
-  appearance: textfield;
-  -moz-appearance: textfield;
-}
-
-.form-section input[type="number"]::-webkit-inner-spin-button,
-.form-section input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
+/* Select dropdown arrow */
 .form-section select {
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%233a7d54' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%234fb87a' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 12px;
-  padding-right: 2.5rem;
+  background-position: right 1.1rem center;
+  background-size: 10px;
+  padding-right: 2.75rem;
 }
 
-/* ===================================
-   CONFIRM BUTTON
-   =================================== */
+/* Select option styling */
+.form-section select option {
+  background: var(--surface-2);
+  color: var(--text-primary);
+}
+
+/*DIVIDER — elegant rule*/
+
+.form-divider {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(79, 184, 122, 0.25) 50%,
+    transparent 100%);
+  border: none;
+  margin: 0.25rem 0;
+}
+
+/*CONFIRM BUTTON*/
 
 .confirm-btn {
   width: 100%;
-  padding: 1.25rem 2rem;
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
-  color: var(--white);
-  font-size: 1.05rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  padding: 1.1rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  box-shadow: 
-    0 8px 24px rgba(45, 95, 63, 0.25),
-    0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--surface);
+  background: linear-gradient(135deg, var(--accent) 0%, #3da868 60%, #2d8a56 100%);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out);
+  box-shadow:
+    0 4px 24px rgba(79, 184, 122, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
+/* Shimmer sweep */
 .confirm-btn::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
+  top: 0; left: -120%;
+  width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.6s var(--ease-out);
+}
+
+/* Top highlight */
+.confirm-btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .confirm-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 
-    0 12px 32px rgba(45, 95, 63, 0.3),
-    0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 8px 36px rgba(79, 184, 122, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .confirm-btn:hover::before {
-  left: 100%;
+  left: 160%;
 }
 
 .confirm-btn:active {
-  transform: translateY(-1px);
-  box-shadow: 
-    0 4px 16px rgba(45, 95, 63, 0.2),
-    0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  box-shadow:
+    0 2px 12px rgba(79, 184, 122, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
-/* ===================================
-   BILL SECTION - GLASSMORPHIC CARD
-   =================================== */
+/*BILL SECTION — Luxury Card */
 
 .bill-section {
-  background: linear-gradient(135deg, 
-    rgba(232, 245, 233, 0.5) 0%, 
-    rgba(255, 255, 255, 0.3) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 2.5rem;
-  border-radius: 20px;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(200, 169, 110, 0.08) 0%, transparent 60%),
+    var(--glass-base);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  border: 2px solid rgba(74, 157, 111, 0.25);
-  box-shadow: 
-    0 12px 40px rgba(45, 95, 63, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  gap: 0;
+  box-shadow:
+    var(--shadow-card),
+    inset 0 1px 0 var(--glass-shine),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   position: relative;
+  overflow: hidden;
 }
 
+/* Gold accent top bar */
 .bill-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, 
-    var(--primary-green) 0%, 
-    var(--accent-green) 50%, 
-    var(--primary-green) 100%);
-  border-radius: 20px 20px 0 0;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--gold) 30%,
+    #e8d5a3 50%,
+    var(--gold) 70%,
+    transparent 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* Soft inner top glow */
+.bill-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 100px;
+  background: linear-gradient(180deg, var(--gold-light) 0%, transparent 100%);
+  pointer-events: none;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .bill-section h3 {
-  color: var(--forest-green);
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  letter-spacing: -0.3px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.65rem;
+  color: var(--text-primary);
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
 }
 
+/* Thin underline for the summary title */
+.bill-section h3:first-of-type::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin-top: 0.6rem;
+  opacity: 0.7;
+}
+
+/* Bill row */
 .bill-section p {
-  font-size: 1rem;
-  color: var(--dark-gray);
-  margin: 0.4rem 0;
-  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+.bill-section p:last-of-type {
+  border-bottom: none;
 }
 
 .bill-section p strong {
-  color: var(--primary-green);
-  font-weight: 600;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Highlight important values */
+.bill-section p .value-accent {
+  color: var(--accent);
 }
 
 .bill-section hr {
   border: none;
-  border-top: 2px solid rgba(74, 157, 111, 0.3);
-  margin: 1rem 0;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(74, 157, 111, 0.3) 50%, 
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(200, 169, 110, 0.3) 30%,
+    rgba(200, 169, 110, 0.5) 50%,
+    rgba(200, 169, 110, 0.3) 70%,
     transparent 100%);
-  height: 2px;
+  margin: 1.5rem 0;
+  position: relative;
+  z-index: 1;
 }
 
+/* Total amount */
 .bill-section h3:last-of-type {
-  color: var(--accent-green);
-  font-size: 2rem;
-  margin-top: 1rem;
-  font-weight: 800;
-  text-align: right;
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: transparent;
+  background: linear-gradient(120deg, var(--gold) 0%, #f0e0b0 50%, var(--gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  margin-top: 0.5rem;
+  text-align: right;
+  position: relative;
+  z-index: 1;
 }
 
-/* ===================================
-   RESPONSIVE DESIGN
-   =================================== */
+/* Badge / tag elements inside bill */
+.bill-badge {
+  display: inline-block;
+  background: rgba(79, 184, 122, 0.12);
+  border: 1px solid rgba(79, 184, 122, 0.25);
+  border-radius: 100px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
 
-/* TABLET (769px - 1024px) */
+/*RESPONSIVE DESIGN */
+
 @media (max-width: 1024px) {
   .booking-container {
-    padding: 2rem;
+    padding: 2.25rem;
     margin: 2rem auto;
   }
 
   .booking-container h2 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 
   .booking-wrapper {
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  .bill-section {
-    padding: 2rem;
+    gap: 1.25rem;
   }
 }
 
-/* TABLET/MOBILE LANDSCAPE (481px - 768px) */
 @media (max-width: 768px) {
   .booking-container {
-    margin: 6rem auto;
-    padding: 1.5rem;
+    margin: 1rem auto;
+    padding: 2rem 1.5rem;
     border-radius: 24px;
   }
 
-  .booking-container::before,
-  .booking-container::after {
-    display: none;
-  }
-
   .booking-container h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.25rem;
   }
 
   .booking-wrapper {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 1.75rem;
-    border-radius: 20px;
-  }
-
-  .form-section {
     gap: 1.25rem;
   }
 
-  .form-section input,
-  .form-section select {
-    padding: 0.95rem 1.15rem;
-    font-size: 0.95rem;
-  }
-
-  .confirm-btn {
-    padding: 1.1rem 1.75rem;
-    font-size: 1rem;
-  }
-
   .bill-section {
-    padding: 2rem;
     order: -1;
-    gap: 1rem;
-  }
-
-  .bill-section h3 {
-    font-size: 1.35rem;
   }
 
   .bill-section h3:last-of-type {
-    font-size: 1.75rem;
+    font-size: 2.1rem;
+  }
+
+  .form-section,
+  .bill-section {
+    padding: 1.75rem;
   }
 }
 
-/* MOBILE PORTRAIT (up to 480px) */
 @media (max-width: 480px) {
   .booking-container {
-    margin: 6rem auto;
-    padding: 1rem;
+    margin: 1rem auto;
+    padding: 1.5rem 1rem;
     border-radius: 20px;
   }
 
   .booking-container h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.9rem;
   }
 
-  .booking-wrapper {
-    padding: 1.25rem;
-    gap: 1.5rem;
-    border-radius: 16px;
-  }
-
-  .form-section {
-    gap: 1rem;
+  .form-section,
+  .bill-section {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md);
   }
 
   .form-section label {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
   }
 
   .form-section input,
   .form-section select {
-    padding: 0.9rem 1rem;
+    padding: 0.85rem 1rem;
     font-size: 0.9rem;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
   }
 
   .confirm-btn {
     padding: 1rem 1.5rem;
-    font-size: 0.95rem;
-    border-radius: 10px;
-    letter-spacing: 1px;
-  }
-
-  .bill-section {
-    padding: 1.5rem;
-    gap: 0.9rem;
-    border-radius: 16px;
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
   }
 
   .bill-section h3 {
-    font-size: 1.25rem;
-  }
-
-  .bill-section p {
-    font-size: 0.9rem;
-    padding: 0.4rem 0;
-  }
-
-  .bill-section h3:last-of-type {
-    font-size: 1.65rem;
-  }
-}
-
-/* EXTRA SMALL DEVICES (up to 360px) */
-@media (max-width: 360px) {
-  .booking-container {
-    padding: 0.75rem;
-    margin: 0.75rem auto;
-  }
-
-  .booking-container h2 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     margin-bottom: 1.25rem;
   }
 
-  .booking-wrapper {
-    padding: 1rem;
-    gap: 1.25rem;
+  .bill-section h3:last-of-type {
+    font-size: 1.85rem;
+  }
+
+  .bill-section p {
+    font-size: 0.82rem;
+    padding: 0.6rem 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .booking-container {
+    margin: 1rem auto;
+    padding: 1.25rem 0.875rem;
+    border-radius: 18px;
+  }
+
+  .booking-container h2 {
+    font-size: 1.65rem;
+  }
+
+  .form-section,
+  .bill-section {
+    padding: 1.25rem 1rem;
   }
 
   .form-section input,
@@ -508,43 +625,81 @@
   }
 
   .confirm-btn {
+    font-size: 0.7rem;
     padding: 0.9rem 1.25rem;
-    font-size: 0.9rem;
-  }
-
-  .bill-section {
-    padding: 1.25rem;
-  }
-
-  .bill-section h3 {
-    font-size: 1.15rem;
-  }
-
-  .bill-section p {
-    font-size: 0.85rem;
   }
 
   .bill-section h3:last-of-type {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
   }
 }
 
-/* ===================================
-   ENHANCED ACCESSIBILITY
-   =================================== */
+/* ACCESSIBILITY*/
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
 
-/* Focus visible for keyboard navigation */
 .form-section input:focus-visible,
 .form-section select:focus-visible,
 .confirm-btn:focus-visible {
-  outline: 3px solid var(--accent-green);
-  outline-offset: 2px;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/*SCROLL ENTRANCE ANIMATION*/
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.booking-container {
+  animation: fadeUp 0.7s var(--ease-out) both;
+}
+
+.form-section {
+  animation: fadeUp 0.7s 0.1s var(--ease-out) both;
+}
+
+.bill-section {
+  animation: fadeUp 0.7s 0.2s var(--ease-out) both;
+}
+
+.field-group.float-label {
+  position: relative;
+}
+
+.field-group.float-label label {
+  position: absolute;
+  top: 50%;
+  left: 1.15rem;
+  transform: translateY(-50%);
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: all 0.22s var(--ease-out);
+  background: transparent;
+  padding: 0 0.25rem;
+}
+
+.field-group.float-label input:focus + label,
+.field-group.float-label input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-label);
+  background: var(--surface-2);
 }

@@ -96,7 +96,7 @@ const stays = [
         price: 2799,
         images: [
             "https://ik.imagekit.io/tae7lprpz/A-Cabin.jpeg",
-            "https://ik.imagekit.io/tae7lprpz/Aframe-eve.jpeg",
+            "https://ik.imagekit.io/tae7lprpz/Aframe2.jpeg?updatedAt=1771335059730",
             "https://ik.imagekit.io/tae7lprpz/Aframe-nyt2.jpeg",
             "https://ik.imagekit.io/tae7lprpz/Aframe-mrng.jpeg",
         ],

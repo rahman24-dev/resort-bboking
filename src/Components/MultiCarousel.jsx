@@ -26,7 +26,7 @@ const imageSets = [
   [
     { src: 'https://ik.imagekit.io/tae7lprpz/A-Cabin.jpeg', price: '₹2500/Per Person' },
     { src: 'https://ik.imagekit.io/tae7lprpz/Aframe-mrng.jpeg' },
-    { src: 'https://ik.imagekit.io/tae7lprpz/Aframe-eve.jpeg' },
+    { src: 'https://ik.imagekit.io/tae7lprpz/Aframe2.jpeg?updatedAt=1771335059730' },
     { src: 'https://ik.imagekit.io/tae7lprpz/Aframe-nyt2.jpeg' },
     { src: 'https://ik.imagekit.io/tae7lprpz/Aframe-inside.jpeg'},
     { src: 'https://ik.imagekit.io/tae7lprpz/Swingger.jpeg'},
