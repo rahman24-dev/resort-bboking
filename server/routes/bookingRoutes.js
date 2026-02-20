@@ -2,7 +2,6 @@ const express = require("express");
 const Booking = require("../models/Booking");
 const verifyAdmin = require("../middleware/authMiddleware")
 const sendEmail = require("../utils/sendEmail");
-const { RouterContextProvider } = require("react-router-dom");
 
 const router = express.Router();
 
