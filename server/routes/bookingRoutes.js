@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 const Booking = require("../models/Booking");
 const verifyAdmin = require("../middleware/authMiddleware");
@@ -6,62 +6,38 @@ const sendEmail = require("../utils/sendEmail");
 
 
 // Create new booking
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 router.post("/", async (req, res) => {
   try {
-    const booking = new Booking(req.body);
-    const savedBooking = await booking.save();
+    await sendEmail(
+      req.body.email,
+      "Nature Heaven Booking Confirmation 🌿",
+      `Hello ${req.body.name},
 
-    // ✅ 1️⃣ Send confirmation to customer
-    await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: req.body.email,
-      subject: "Nature Heaven Booking Confirmation 🌿",
-      html: `
-        <h2>Booking Confirmed!</h2>
-        <p>Hello ${req.body.name},</p>
-        <p>Your booking is successfully confirmed.</p>
-        <p><b>Booking ID:</b> ${savedBooking._id}</p>
-        <ul>
-          <li>Stay Type: ${req.body.stayType}</li>
-          <li>Check-in: ${req.body.checkIn}</li>
-          <li>Check-out: ${req.body.checkOut}</li>
-          <li>Adults: ${req.body.adults}</li>
-          <li>Children: ${req.body.children}</li>
-        </ul>
-        <p>Thank you for choosing Nature Heaven 🌿</p>
-      `
-    });
+    Your booking is confirmed!
 
-    // ✅ 2️⃣ Send notification to admin
-    await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: process.env.ADMIN_EMAIL,
-      subject: "🚨 New Booking Received",
-      html: `
-        <h2>New Booking Alert</h2>
-        <p><b>Booking ID:</b> ${savedBooking._id}</p>
-        <ul>
-          <li>Name: ${req.body.name}</li>
-          <li>Email: ${req.body.email}</li>
-          <li>Phone: ${req.body.phone}</li>
-          <li>Stay Type: ${req.body.stayType}</li>
-          <li>Check-in: ${req.body.checkIn}</li>
-          <li>Check-out: ${req.body.checkOut}</li>
-          <li>Adults: ${req.body.adults}</li>
-          <li>Children: ${req.body.children}</li>
-        </ul>
-      `
-    });
+    Stay Type: ${req.body.stayType}
+    Check-in: ${req.body.checkIn}
+    Check-out: ${req.body.checkOut}
+    Adults: ${req.body.adults}
+    Children: ${req.body.children}
 
-    res.status(201).json({ message: "Booking saved & emails sent" });
+    Thank you for choosing Nature Heaven 🌿`
+    );
+
+    await sendEmail(
+      process.env.ADMIN_EMAIL,
+      "New Booking Alert 🚨",
+      `New booking received!
+
+    Name: ${req.body.name}
+    Phone: ${req.body.phone}
+    Email: ${req.body.email}`
+    );
+
+    return res.status(201).json({ success:true,message: "Booking saved & email sent" });
 
   } catch (error) {
-    console.error("Email error:", error);
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 });
 
