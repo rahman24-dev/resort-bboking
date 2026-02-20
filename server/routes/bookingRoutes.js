@@ -1,9 +1,9 @@
 import express from "express";
-const router = express.Router();
-const Booking = require("../models/Booking");
-const verifyAdmin = require("../middleware/authMiddleware");
-const sendEmail = require("../utils/sendEmail");
+import Booking from "../models/Booking.js";
+import verifyAdmin from "../middleware/authMiddleware.js";
+import sendEmail from "../utils/sendEmail.js";
 
+const router = express.Router();
 
 // Create new booking
 router.post("/", async (req, res) => {
