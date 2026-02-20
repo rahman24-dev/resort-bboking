@@ -1,7 +1,8 @@
-import express from "express";
-import Booking from "../models/Booking.js";
-import verifyAdmin from "../middleware/authMiddleware.js";
-import sendEmail from "../utils/sendEmail.js";
+const express = require("express");
+const Booking = require("../models/Booking");
+const verifyAdmin = require("../middleware/authMiddleware")
+const sendEmail = require("../utils/sendEmail");
+const { RouterContextProvider } = require("react-router-dom");
 
 const router = express.Router();
 
@@ -68,4 +69,4 @@ router.delete("/:id", verifyAdmin, async (req, res) => {
 });
 
 
-export default router;
+module.exports = router;
