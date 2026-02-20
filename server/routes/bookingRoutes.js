@@ -8,6 +8,10 @@ const router = express.Router();
 // Create new booking
 router.post("/", async (req, res) => {
   try {
+    const booking = new Booking(req.body);
+    await booking.save();
+
+    // Send confirmation email to user
     await sendEmail(
       req.body.email,
       "Nature Heaven Booking Confirmation 🌿",

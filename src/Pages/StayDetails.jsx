@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import stays from "../data/stays";
 import Header from "../Components/Header";
@@ -17,14 +17,46 @@ import {
   Phone,
   ChevronRight,
   AlertCircle,
-  ArrowLeft
+  ArrowLeft,
+  Images,
+  X,
+  ChevronLeft
 } from "lucide-react";
 
 function StayDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const stay = stays.find((item) => item.id === id);
+
+  const openLightbox = (index) => {
+    setActiveIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    document.body.style.overflow = "";
+  };
+
+  const goPrev = (e) => {
+    e.stopPropagation();
+    setActiveIndex((prev) => (prev - 1 + stay.images.length) % stay.images.length);
+  };
+
+  const goNext = (e) => {
+    e.stopPropagation();
+    setActiveIndex((prev) => (prev + 1) % stay.images.length);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowLeft") setActiveIndex((prev) => (prev - 1 + stay.images.length) % stay.images.length);
+    if (e.key === "ArrowRight") setActiveIndex((prev) => (prev + 1) % stay.images.length);
+    if (e.key === "Escape") closeLightbox();
+  };
 
   if (!stay) {
     return (
@@ -89,16 +121,86 @@ function StayDetails() {
           </div>
 
           {/* Image Gallery */}
-          <div className="image-gallery">
-            {stay.images.map((img, index) => (
-              <div key={index} className="gallery-item">
-                <img src={img} alt={`${stay.title} - ${index + 1}`} />
-                <div className="image-overlay">
-                  <div className="overlay-gradient"></div>
+          <div className="image-gallery-wrapper">
+            {/* Main large image */}
+            <div className="gallery-main" onClick={() => openLightbox(0)}>
+              <img src={stay.images[0]} alt={`${stay.title} - 1`} />
+              <div className="gallery-main-overlay"></div>
+            </div>
+
+            {/* Side thumbnails (up to 3) */}
+            <div className="gallery-side">
+              {stay.images.slice(1, 4).map((img, index) => (
+                <div
+                  key={index}
+                  className={`gallery-thumb ${index === 2 ? "gallery-thumb-last" : ""}`}
+                  onClick={() => openLightbox(index + 1)}
+                >
+                  <img src={img} alt={`${stay.title} - ${index + 2}`} />
+                  <div className="gallery-thumb-overlay"></div>
+                  {/* Show "+X more" badge on last visible thumb */}
+                  {index === 2 && stay.images.length > 4 && (
+                    <div className="gallery-more-badge">
+                      +{stay.images.length - 4} more
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* View All button */}
+            <button className="gallery-view-all" onClick={() => openLightbox(0)}>
+              <Images size={18} strokeWidth={2} />
+              <span>View all {stay.images.length} photos</span>
+            </button>
           </div>
+
+          {/* Lightbox */}
+          {lightboxOpen && (
+            <div
+              className="lightbox-overlay"
+              onClick={closeLightbox}
+              onKeyDown={handleKeyDown}
+              tabIndex={0}
+              autoFocus
+            >
+              {/* Header */}
+              <div className="lightbox-header" onClick={(e) => e.stopPropagation()}>
+                <span className="lightbox-counter">{activeIndex + 1} / {stay.images.length}</span>
+                <button className="lightbox-close" onClick={closeLightbox}>
+                  <X size={24} strokeWidth={2} />
+                </button>
+              </div>
+
+              {/* Main image */}
+              <div className="lightbox-main" onClick={(e) => e.stopPropagation()}>
+                <button className="lightbox-nav lightbox-prev" onClick={goPrev}>
+                  <ChevronLeft size={32} strokeWidth={2} />
+                </button>
+                <img
+                  src={stay.images[activeIndex]}
+                  alt={`${stay.title} - ${activeIndex + 1}`}
+                  className="lightbox-image"
+                />
+                <button className="lightbox-nav lightbox-next" onClick={goNext}>
+                  <ChevronRight size={32} strokeWidth={2} />
+                </button>
+              </div>
+
+              {/* Thumbnails strip */}
+              <div className="lightbox-thumbs" onClick={(e) => e.stopPropagation()}>
+                {stay.images.map((img, index) => (
+                  <div
+                    key={index}
+                    className={`lightbox-thumb ${index === activeIndex ? "lightbox-thumb-active" : ""}`}
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    <img src={img} alt={`thumb-${index}`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Description Section */}
           {stay.description && (

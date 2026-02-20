@@ -92,6 +92,23 @@ function Footer() {
           </ul>
         </div>
 
+        {/* Google Map */}
+        <div className="footer-section">
+          <h4 className="footer-heading">Find Us</h4>
+          <div className="footer-map">
+            <iframe
+              title="Nature Heaven Holidays Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.595681919317!2d77.18710577479433!3d10.050183790057819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b079f75c52a85d7%3A0x5dc5c0533d1b4df1!2sNature%20Heaven%20Holidays!5e0!3m2!1sen!2sin!4v1771587718611!5m2!1sen!2sin"
+              width="100%"
+              height="200"
+              style={{ border: 0, borderRadius: "12px" }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
         {/* Newsletter */}
         <div className="footer-section">
           <div className="payment-methods">

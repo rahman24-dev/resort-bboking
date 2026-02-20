@@ -6,7 +6,14 @@ const stays = [
         price: 2499,
         images: [
             "https://ik.imagekit.io/tae7lprpz/CubeImage.jpeg",
-            "https://ik.imagekit.io/tae7lprpz/CubeTent.jpeg?updatedAt=1770393860030"
+            "https://ik.imagekit.io/tae7lprpz/CubeTent.jpeg?updatedAt=1770393860030",
+            "https://ik.imagekit.io/tae7lprpz/Waterfalls.jpeg?updatedAt=1770392510387",
+            "https://ik.imagekit.io/tae7lprpz/CubeTentImage.jpeg?updatedAt=1770392509865",
+            "https://ik.imagekit.io/tae7lprpz/DjParty.jpeg?updatedAt=1770393937228",
+            "https://ik.imagekit.io/tae7lprpz/JeepSafari.jpeg?updatedAt=1770898197683",
+            "https://ik.imagekit.io/tae7lprpz/PhotoShoot.jpeg?updatedAt=1770898197697",
+            "https://ik.imagekit.io/tae7lprpz/Swingger.jpeg?updatedAt=1770898197669"
+
         ],
         location:"Suryanelli kerala",
         duration:"1 Day, 1 Night",
@@ -51,7 +58,14 @@ const stays = [
         price: 1999,
         images: [
             "https://ik.imagekit.io/tae7lprpz/Tent.jpeg",
-            "https://ik.imagekit.io/tae7lprpz/TentOuter.jpeg"
+            "https://ik.imagekit.io/tae7lprpz/TentOuter.jpeg",
+            "https://ik.imagekit.io/tae7lprpz/TentInner.jpeg?updatedAt=1770392510097",
+            "https://ik.imagekit.io/tae7lprpz/DinningHall.jpeg?updatedAt=1770898197807",
+            "https://ik.imagekit.io/tae7lprpz/CampFire.jpeg?updatedAt=1770392509894",
+            "https://ik.imagekit.io/tae7lprpz/JeepSafari.jpeg?updatedAt=1770898197683",
+            "https://ik.imagekit.io/tae7lprpz/PhotoShoot.jpeg?updatedAt=1770898197697",
+            "https://ik.imagekit.io/tae7lprpz/Swingger.jpeg?updatedAt=1770898197669"
+
         ],
         location:"Suryanelli kerala",
         duration:"1 Day, 1 Night",
@@ -99,6 +113,11 @@ const stays = [
             "https://ik.imagekit.io/tae7lprpz/Aframe2.jpeg?updatedAt=1771335059730",
             "https://ik.imagekit.io/tae7lprpz/Aframe-nyt2.jpeg",
             "https://ik.imagekit.io/tae7lprpz/Aframe-mrng.jpeg",
+            "https://ik.imagekit.io/tae7lprpz/CampFire.jpeg?updatedAt=1770392509894",
+            "https://ik.imagekit.io/tae7lprpz/JeepSafari.jpeg?updatedAt=1770898197683",
+            "https://ik.imagekit.io/tae7lprpz/PhotoShoot.jpeg?updatedAt=1770898197697",
+            "https://ik.imagekit.io/tae7lprpz/Swingger.jpeg?updatedAt=1770898197669"
+
         ],
         location:"Suryanelli kerala",
         duration:"1 Day, 1 Night",
@@ -145,7 +164,13 @@ const stays = [
             "https://ik.imagekit.io/tae7lprpz/Tent-own1.jpeg",
             "https://ik.imagekit.io/tae7lprpz/Tent-own.jpeg",
             "https://ik.imagekit.io/tae7lprpz/Tent-own2.jpeg",
-            "https://ik.imagekit.io/tae7lprpz/tent-onw3.jpeg"
+            "https://ik.imagekit.io/tae7lprpz/tent-onw3.jpeg",
+            "https://ik.imagekit.io/tae7lprpz/CampFire.jpeg?updatedAt=1770392509894",
+            "https://ik.imagekit.io/tae7lprpz/JeepSafari.jpeg?updatedAt=1770898197683",
+            "https://ik.imagekit.io/tae7lprpz/PhotoShoot.jpeg?updatedAt=1770898197697",
+            "https://ik.imagekit.io/tae7lprpz/Swingger.jpeg?updatedAt=1770898197669"
+
+            
         ],
         location:"Suryanelli kerala",
         duration:"1 Day, 1 Night",
