@@ -20,6 +20,7 @@ function Booking() {
     Cube: 2499,
     AFrame: 2799,
     AlphinTent: 1799,
+    MunnarPackage: 2499,
   };
 
   const handleChange = (e) => {
@@ -143,6 +144,9 @@ function Booking() {
             </option>
             <option value="AlphinTent">
               Tent Stay - ₹1,799
+            </option>
+            <option value="MunnarPackage">
+              Munnar Package - ₹2,499
             </option>
           </select>
 

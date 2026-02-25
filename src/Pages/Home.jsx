@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 import "./Home.css";
 import MultiCarousel from "../Components/MultiCarousel";
 import ItineraryCard from "../Components/ItineraryCard";
+import ExplorePackage from "../Components/ExplorePackage";
 
 function Home() {
   return (
@@ -17,10 +18,12 @@ function Home() {
         <p>Discover amazing places included in your stay</p>
         <MultiCarousel />
       </section>
+      <section>
+        <ExplorePackage/>
+      </section>
       <section id="itinerary">
           <ItineraryCard/>
       </section>
-      {/* <ImageHoverExpand/> */}
       <Footer />
     </div>
   );

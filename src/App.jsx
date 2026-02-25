@@ -6,6 +6,8 @@ import AdminLogin from "./Pages/AdminLogin"
 import AdminDashboard from "./Pages/AdminDashboard"
 import ProtectedRoute from "./Components/ProtectedRoute";
 import StayDetails from "./Pages/StayDetails";
+import ExplorePackage from './Components/ExplorePackage'
+import PackageDetails from './Pages/PackageDetails'
 
 
 function App() {
@@ -17,6 +19,9 @@ function App() {
       <Route path="/admin" element={<AdminLogin />} />
       <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard/></ProtectedRoute>} />
       <Route path='/stay/:id' element={<StayDetails/>}/>
+      <Route path="/" element={<ExplorePackage />} />
+      <Route path="/package-details" element={<PackageDetails />} />
+
 
     </Routes>
    </BrowserRouter>
