@@ -36,9 +36,7 @@
   overflow-x: hidden;
 }
 
-/* ══════════════════════════════════════════
-   HERO SECTION
-══════════════════════════════════════════ */
+/* HERO SECTION */
 .heroSections {
   position: relative;
   height: 100vh;
@@ -187,9 +185,7 @@
   50% { opacity: 1; transform: scaleY(1.15); }
 }
 
-/* ══════════════════════════════════════════
-   BREADCRUMBS
-══════════════════════════════════════════ */
+/* BREADCRUMBS */
 .breadcrumbsContainer {
   display: flex;
   align-items: center;
@@ -273,9 +269,7 @@
   }
 }
 
-/* ══════════════════════════════════════════
-   CONTENT WRAPPER
-══════════════════════════════════════════ */
+/* CONTENT WRAPPER */
 .contentWrappers {
   background: var(--cream);
 }
@@ -286,9 +280,7 @@
   padding: 0 1.5rem;
 }
 
-/* ══════════════════════════════════════════
-   DESCRIPTION SECTION
-══════════════════════════════════════════ */
+/* DESCRIPTION SECTION */
 .descriptionSections {
   padding: 5rem 0 2.5rem;
   text-align: center;
@@ -319,9 +311,7 @@
   margin: 0 auto;
 }
 
-/* ══════════════════════════════════════════
-   HIGHLIGHTS
-══════════════════════════════════════════ */
+/* HIGHLIGHTS */
 .highlightsSection {
   padding: 2rem 0 4rem;
 }
@@ -396,9 +386,7 @@
   font-weight: 400;
 }
 
-/* ══════════════════════════════════════════
-   PRICE SECTION
-══════════════════════════════════════════ */
+/* PRICE SECTION */
 .priceSections {
   padding: 0 0 4rem;
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,500&display=swap');
+
 .heros {
   height: 100vh;
   background: linear-gradient(
@@ -24,9 +26,9 @@
 
 /* Heading */
 .heros-content h2 {
-  font-size: 52px;
+  font-size: 62px;
   font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   margin-bottom: 18px;
   letter-spacing: 0.5px;
 }
@@ -35,14 +37,15 @@
 .heros-content p {
   font-size: 22px;
   line-height: 1.7;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   color: #cfeeff;
   margin-bottom: 35px;
 }
 
 .heros-content h2 span {
-  font-size: 52px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 62px;
   background: linear-gradient(135deg, #b86c3b, #e6a552);
   -webkit-background-clip: text;
   background-clip: text;
@@ -57,6 +60,7 @@
   gap: 12px;
   padding: 18px 40px;
   font-size: 18px;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   color: white;
   background: linear-gradient(#db8349 , #ee9a2e);
@@ -111,7 +115,7 @@
 
 @media (max-width: 768px) {
   .heros {
-    height: 75vh;
+    height: 85vh;
     padding: 60px 24px;
   }
 
@@ -121,11 +125,11 @@
   }
 
   .heros-content h2 {
-    font-size: 38px;
+    font-size: 48px;
   }
 
   .heros-content h2 span {
-    font-size: 38px;
+    font-size: 48px;
   }
 
   .heros-content p {

@@ -9,10 +9,7 @@ const stays = [
             "https://ik.imagekit.io/tae7lprpz/CubeTent.jpeg?updatedAt=1770393860030",
             "https://ik.imagekit.io/tae7lprpz/Waterfalls.jpeg?updatedAt=1770392510387",
             "https://ik.imagekit.io/tae7lprpz/CubeTentImage.jpeg?updatedAt=1770392509865",
-            "https://ik.imagekit.io/tae7lprpz/DjParty.jpeg?updatedAt=1770393937228",
             "https://ik.imagekit.io/tae7lprpz/JeepSafari.jpeg?updatedAt=1770898197683",
-            "https://ik.imagekit.io/tae7lprpz/PhotoShoot.jpeg?updatedAt=1770898197697",
-            "https://ik.imagekit.io/tae7lprpz/Swingger.jpeg?updatedAt=1770898197669"
 
         ],
         location:"Suryanelli kerala",
@@ -60,11 +57,8 @@ const stays = [
             "https://ik.imagekit.io/tae7lprpz/Tent.jpeg",
             "https://ik.imagekit.io/tae7lprpz/TentOuter.jpeg",
             "https://ik.imagekit.io/tae7lprpz/TentInner.jpeg?updatedAt=1770392510097",
-            "https://ik.imagekit.io/tae7lprpz/DinningHall.jpeg?updatedAt=1770898197807",
-            "https://ik.imagekit.io/tae7lprpz/CampFire.jpeg?updatedAt=1770392509894",
             "https://ik.imagekit.io/tae7lprpz/JeepSafari.jpeg?updatedAt=1770898197683",
-            "https://ik.imagekit.io/tae7lprpz/PhotoShoot.jpeg?updatedAt=1770898197697",
-            "https://ik.imagekit.io/tae7lprpz/Swingger.jpeg?updatedAt=1770898197669"
+            "https://ik.imagekit.io/tae7lprpz/CubeTentImage.jpeg?updatedAt=1770392509865"
 
         ],
         location:"Suryanelli kerala",
@@ -106,7 +100,7 @@ const stays = [
 
     {
         id: "aframe",
-        title: "A-Frame Stay",
+        title: "A-Cabin Stay",
         price: 2799,
         images: [
             "https://ik.imagekit.io/tae7lprpz/A-Cabin.jpeg",

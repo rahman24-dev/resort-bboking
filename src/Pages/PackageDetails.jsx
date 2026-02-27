@@ -13,12 +13,12 @@ const PackageDetails = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
-    'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
-    'https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=1200&q=80',
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=80'
+    'https://ik.imagekit.io/tae7lprpz/IMG_9415.jpeg?updatedAt=1772192187084',
+    'https://ik.imagekit.io/tae7lprpz/IMG_9412.jpeg?updatedAt=1772192188215',
+    'https://ik.imagekit.io/tae7lprpz/IMG_9414.jpeg?updatedAt=1772192187830',
+    'https://ik.imagekit.io/tae7lprpz/IMG_9416.jpeg?updatedAt=1772192187587',
+    'https://ik.imagekit.io/tae7lprpz/IMG_9410.jpeg?updatedAt=1772192188431',
+    'https://ik.imagekit.io/tae7lprpz/IMG_9418.jpeg?updatedAt=1772192186291'
   ];
 
   const openLightbox = (index) => {

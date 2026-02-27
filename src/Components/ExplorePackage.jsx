@@ -7,10 +7,10 @@ const PackageSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-    'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80'
+    'https://ik.imagekit.io/tae7lprpz/IMG_9409.jpeg?updatedAt=1772192188042',
+    'https://ik.imagekit.io/tae7lprpz/IMG_9414.jpeg?updatedAt=1772192187830',
+    'https://ik.imagekit.io/tae7lprpz/IMG_9413.jpeg?updatedAt=1772192186889',
+    'https://ik.imagekit.io/tae7lprpz/IMG_9411.jpeg?updatedAt=1772192187371'
   ];
 
   const nextSlide = () => {
