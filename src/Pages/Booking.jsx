@@ -101,8 +101,11 @@ function Booking() {
   };
 
   const basePrice = stayPrices[formData.stayType];
-  const totalGuest = Number(formData.adults);
-  const totalAmount = basePrice * totalGuest;
+  const adults = Number(formData.adults) || 0;
+  const children = Number(formData.children) || 0;
+
+  const totalGuest = adults + children;
+  const totalAmount = (adults * basePrice) + (children * (basePrice / 2));
 
   return (
     <div className="booking-container">
@@ -125,6 +128,7 @@ function Booking() {
           <input type="date" name="checkOut" onChange={handleChange} required />
 
           <input type="number" name="adults" placeholder="Number of Adults" min="1" value={formData.adults} onChange={handleChange} />
+          <label>5–10 yrs: Half charge | 10+ yrs: Adult</label>
           <input type="number" name="children" placeholder="Number of Children" min="0" value={formData.children} onChange={handleChange} />
 
           <select name="stayType" value={formData.stayType} onChange={handleChange}>
@@ -155,7 +159,8 @@ function Booking() {
           <p>Price per person: ₹{basePrice}</p>
           <p>Adults: {formData.adults}</p>
           <p>Children: {formData.children}</p>
-          <p>Total Guest: {totalGuest}</p>
+          <p>Total Guests: {adults + children}</p>
+          <p>Children Charge (50%): ₹{children * (basePrice / 2)}</p>
           <hr />
           <h3>Total Amount: ₹{totalAmount}</h3>
           <p>Check-in Time: 2:00 PM</p>
