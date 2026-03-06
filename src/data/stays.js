@@ -3,7 +3,7 @@ const stays = [
     {
         id: "cube",
         title: "Cube Stays",
-        price: 2499,
+        price: 2400,
         images: [
             "https://ik.imagekit.io/tae7lprpz/CubeImage.jpeg",
             "https://ik.imagekit.io/tae7lprpz/CubeTent.jpeg?updatedAt=1770393860030",
@@ -52,7 +52,7 @@ const stays = [
     {
         id: "tent",
         title: "Tent Stays",
-        price: 1999,
+        price: 1800,
         images: [
             "https://ik.imagekit.io/tae7lprpz/Tent.jpeg",
             "https://ik.imagekit.io/tae7lprpz/TentOuter.jpeg",
@@ -101,7 +101,7 @@ const stays = [
     {
         id: "aframe",
         title: "A-Cabin Stay",
-        price: 2799,
+        price: 2300,
         images: [
             "https://ik.imagekit.io/tae7lprpz/A-Cabin.jpeg",
             "https://ik.imagekit.io/tae7lprpz/Aframe2.jpeg?updatedAt=1771335059730",
@@ -153,7 +153,7 @@ const stays = [
     {
         id:"AlphineTent",
         title:"Alphine Tent",
-        price: 1799,
+        price: 1650,
         images: [
             "https://ik.imagekit.io/tae7lprpz/Tent-own1.jpeg",
             "https://ik.imagekit.io/tae7lprpz/Tent-own.jpeg",

@@ -57,10 +57,10 @@ function Booking() {
   const [alert, setAlert] = useState({ type: "", message: "" });
 
   const stayPrices = {
-    Tent: 1999,
-    Cube: 2499,
-    AFrame: 2799,
-    AlphinTent: 1799,
+    Tent: 1800,
+    Cube: 2400,
+    AFrame: 2300,
+    AlphinTent: 1650,
     MunnarPackage: 2499,
   };
 
@@ -128,10 +128,10 @@ function Booking() {
           <input type="number" name="children" placeholder="Number of Children" min="0" value={formData.children} onChange={handleChange} />
 
           <select name="stayType" value={formData.stayType} onChange={handleChange}>
-            <option value="Tent">Tent Stay - ₹1,999</option>
-            <option value="Cube">Cube Stay - ₹2,499</option>
-            <option value="AFrame">A Frame Stay - ₹2,799</option>
-            <option value="AlphinTent">Alphin Tent Stay - ₹1,799</option>
+            <option value="Tent">Tent Stay - ₹1,800</option>
+            <option value="Cube">Cube Stay - ₹2,400</option>
+            <option value="AFrame">A Frame Stay - ₹2,300</option>
+            <option value="AlphinTent">Alphin Tent Stay - ₹1,650</option>
             <option value="MunnarPackage">Munnar Package - ₹2,499</option>
           </select>
 

@@ -5,7 +5,7 @@ import './MultiCarousel.css';
 const imageSets = [
   // Carousel 1 - First image has price overlay
   [
-    { src: 'https://ik.imagekit.io/tae7lprpz/CubeImage.jpeg', price: '₹2499/Per Person' },
+    { src: 'https://ik.imagekit.io/tae7lprpz/CubeImage.jpeg', price: '₹2400/Per Person' },
     { src: 'https://ik.imagekit.io/tae7lprpz/CubeTent.jpeg?updatedAt=1770393860030' },
     { src: 'https://ik.imagekit.io/tae7lprpz/Waterfalls.jpeg?updatedAt=1770392510387' },
     { src: 'https://ik.imagekit.io/tae7lprpz/CampFire.jpeg' },
@@ -13,14 +13,14 @@ const imageSets = [
   ],
   // Carousel 2
   [
-    { src: 'https://ik.imagekit.io/tae7lprpz/Tent.jpeg', price: '₹1999/Per Person' },
+    { src: 'https://ik.imagekit.io/tae7lprpz/Tent.jpeg', price: '₹1800/Per Person' },
     { src: 'https://ik.imagekit.io/tae7lprpz/TentOuter.jpeg' },
     { src: 'https://ik.imagekit.io/tae7lprpz/TentInner.jpeg' },
     { src: 'https://ik.imagekit.io/tae7lprpz/CubeTentImage.jpeg' },
   ],
   // Carousel 3
   [
-    { src: 'https://ik.imagekit.io/tae7lprpz/A-Cabin.jpeg', price: '₹2799/Per Person' },
+    { src: 'https://ik.imagekit.io/tae7lprpz/A-Cabin.jpeg', price: '₹2300/Per Person' },
     { src: 'https://ik.imagekit.io/tae7lprpz/Aframe-mrng.jpeg' },
     { src: 'https://ik.imagekit.io/tae7lprpz/Aframe2.jpeg?updatedAt=1771335059730' },
     { src: 'https://ik.imagekit.io/tae7lprpz/Aframe-nyt2.jpeg' },
@@ -30,7 +30,7 @@ const imageSets = [
   ],
   //Carousel 4
   [
-    { src: 'https://ik.imagekit.io/tae7lprpz/Tent-own1.jpeg', price: '₹1799/Per Person' },
+    { src: 'https://ik.imagekit.io/tae7lprpz/Tent-own1.jpeg', price: '₹1650/Per Person' },
     { src: 'https://ik.imagekit.io/tae7lprpz/Tent-own.jpeg' },
     { src: 'https://ik.imagekit.io/tae7lprpz/Tent-own2.jpeg' },
     { src: 'https://ik.imagekit.io/tae7lprpz/tent-onw3.jpeg' },
