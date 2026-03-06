@@ -101,7 +101,7 @@ function Booking() {
   };
 
   const basePrice = stayPrices[formData.stayType];
-  const totalGuest = Number(formData.children) + Number(formData.adults);
+  const totalGuest = Number(formData.adults);
   const totalAmount = basePrice * totalGuest;
 
   return (
