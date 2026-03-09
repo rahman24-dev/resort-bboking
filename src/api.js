@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL:"https://resort-bboking-backend.onrender.com"
+    baseURL:"https://api.natureheavenholidays.com"
 });
 
 export default API;
