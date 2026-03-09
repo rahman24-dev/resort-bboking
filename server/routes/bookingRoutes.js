@@ -35,7 +35,12 @@ router.post("/", async (req, res) => {
 
     Name: ${req.body.name}
     Phone: ${req.body.phone}
-    Email: ${req.body.email}`
+    Email: ${req.body.email}
+    Stay Type: ${req.body.stayType}
+    Check-in: ${req.body.checkIn}
+    Check-out: ${req.body.checkOut}
+    Adults: ${req.body.adults}
+    Children: ${req.body.children}`
     );
 
     return res.status(201).json({ success:true,message: "Booking saved & email sent" });
